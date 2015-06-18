@@ -1,0 +1,42 @@
+!!!
+%html{lang: "en"}
+  %head
+    %title ReconTrac Prototype
+    %meta{charset: 'UTF-8'}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0, user-scalable=no", :name => "viewport"}/
+    %meta{content: "noindex, nofollow", name: "robots"}/
+    = csrf_meta_tag
+    = stylesheet_link_tag 'application', media: "all"
+    = javascript_include_tag '//code.jquery.com/jquery-1.11.0.min.js'
+    = javascript_include_tag 'application'
+
+  %body
+    %a{name: "top"}
+    -if login_screen
+      #bg-image{style: "background-image: url(#{show_rand_bg});"}
+      #bg-overlay
+    -else
+      #bg-image-int{style: "background-image: url(#{show_rand_bg_int});"}
+      #bg-overlay-int
+    #maxcontainer.container-fluid
+      -if login_screen
+        =render "shared/login-alertbin"
+        = yield
+      -else
+        .vspacer-int
+        #notification-bin
+          #notification-bin-inner.pre-scrollable
+            =render "shared/notifications"
+          .top-shdw
+        #contentcontainer
+          -#=params[:controller]
+          -#=params[:action]
+          =render "shared/headerbar"
+          = yield
+
+        =render "shared/profilebin"
+        =render "shared/organizationbin"
+
+      %a.btn-up{href: "javascript:void(0);" }
+        %i.fa.fa-arrow-up

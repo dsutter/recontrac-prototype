@@ -1,0 +1,40 @@
+/*** responsive - breakpoint mixins ***/
+@mixin breakpoint($point) {
+    @if $point == xs_only {
+        @media (max-width: 480px) { @content; }
+    }
+    @else if $point == sm_only {
+        @media (min-width: 481px) and (max-width: 768px) { @content; }
+    }
+    @else if $point == md_only {
+        @media (min-width: 769px) and (max-width: 991px) { @content; }
+    }
+    @else if $point == lg_only {
+        @media (min-width: 992px) and (max-width: 1199px) { @content; }
+    }
+    @else if $point == xlg_only {
+        @media (min-width: 1200px) { @content; }
+    }
+
+    @else if $point == phone_sm {
+      @media (max-width: 480px) { @content ; }
+    }
+    @else if $point == phone_lg {
+      @media (max-width: 580px) { @content ; }
+    }
+    @else if $point == tablet_sm {
+        @media (max-width: 630px) { @content ; }
+    }
+    @else if $point == tablet_lg {
+      @media (max-width: 768px) { @content ; }
+    }
+    @else if $point == desktop_sm {
+      @media (max-width: 991px) { @content ; }
+    }
+    @else if $point == desktop_md {
+      @media (max-width: 1199px) { @content ; }
+    }
+    @else if $point == desktop_lg {
+        @media (min-width: 1200px) { @content ; }
+    }
+}

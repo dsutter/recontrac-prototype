@@ -1,0 +1,15 @@
+%ul#organization-bin.rt-dropdown-menu
+  .arrow-indicator
+    =image_tag("dropdown-tri-up.png", width: "12px", height: "7px", border: "0")
+  %li
+    .infobar
+      %b iGroup Creative
+      %br/
+      9394 West Dodge Road
+      %br/
+      Omaha, NE 68114
+      %br/
+      %b 402.330.6446
+  %li.divider
+  %li
+    =link_to "<i class='fa fa-times'></i> Close Panel".html_safe, "javascript:void(0);", id: "organizationbin-close", class: "dropdown-btn-main", :role => "menuitem", :tabindex => "-1"

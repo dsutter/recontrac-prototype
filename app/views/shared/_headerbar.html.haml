@@ -1,0 +1,33 @@
+.navbar-fixed-top.navbar-main
+  .navbar-left
+    %ul.navbar-custom.pull-left
+      %li#header-logo-li
+        %a.rt-logo.pull-left{href: root_path}
+          =image_tag("recontrac-logo-hlockup-transbg-rgb-rev.png", height: "30px", border: "0")
+      %li#header-profile-li
+        %a#profilenav-toggle.navclosed{:href => "javascript:void(0);"}
+          %i.fa.fa-male.fa-lg
+        #profile
+          .name
+            David Sutter
+          .org
+            iGroup Creative
+        .clearfix
+    %ul#headerbar-nonmobile.navbar-custom.pull-right
+      =render "shared/navigationmenu"
+    %ul#headerbar-mobile.navbar-custom.pull-right
+      %li
+        %a#navigationmenu-toggle.navclosed{href: "javascript:void(0);", title: "Navigation"}
+          %i.fa.fa-navicon.fa-lg
+    .clearfix
+    %h1 Dashboard
+    #notification-tab-bin
+      %a.notification-tab.pull-left{href: "javascript:void(0);"} Mark All As Read
+      %a.notification-tab.pull-left{href: "javascript:void(0);"} View All Notifications
+      .clearfix
+  #organization-toggle.navbar-right.navclosed
+    #organization-logo=image_tag("igroupcreative_logo.png", class:"img-responsive", alt:"iGroup Creative", title:"iGroup Creative", border: "0")
+    #organization-arrow
+      %i.fa.fa-chevron-down
+  %ul#navigation-menu.navbar-custom
+    =render "shared/navigationmenu"

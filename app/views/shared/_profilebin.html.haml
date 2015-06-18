@@ -1,0 +1,21 @@
+%ul#profilenav-bin.rt-dropdown-menu
+  .arrow-indicator
+    =image_tag("dropdown-tri-up.png", width: "12px", height: "7px", border: "0")
+  %li
+    %a.dropdown-btn-toggle{"data-toggle" => "collapse", :href => "#entity-options"}
+      iGroup Creative
+      %i.fa.fa-caret-down
+    #entity-options.collapse
+      .content-inset
+        =link_to "iGroup Creative", "javascript:void(0);", class: "dropdown-btn-entity selected"
+        =link_to "Thunderstone Detailers", "javascript:void(0);", class: "dropdown-btn-entity"
+        =link_to "BayWash", "javascript:void(0);", class: "dropdown-btn-entity"
+  %li.divider
+  -#%li
+  -#  =link_to "<i class='fa fa-envelope-square'></i> Invite User".html_safe, "javascript:void(0);", class: "dropdown-btn-main", :role => "menuitem", :tabindex => "-1"
+  %li
+    =link_to "<i class='fa fa-gear'></i> Account Settings".html_safe, "javascript:void(0);", class: "dropdown-btn-main", :role => "menuitem", :tabindex => "-1"
+  %li
+    =link_to "<i class='fa fa-power-off'></i> Logout".html_safe, login_path, class: "dropdown-btn-main", :role => "menuitem", :tabindex => "-1"
+  %li
+    =link_to "<i class='fa fa-times'></i> Close Panel".html_safe, "javascript:void(0);", id: "profilebin-close", class: "dropdown-btn-main", :role => "menuitem", :tabindex => "-1"

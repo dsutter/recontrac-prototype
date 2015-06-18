@@ -1,0 +1,36 @@
+#logincontainer
+  #logobin
+    =image_tag("recontrac-logo-vlockup-transbg-rgb-rev-shdw.png", width: "350px", border: "0", class: "rt-logo-lg")
+
+  #login-panel
+    %form{"accept-charset" => "UTF-8", :action => "", :method => "post", :role => "form"}
+      .form-group
+        .input-group
+          .input-group-addon
+            %i.fa.fa-male
+          %input#usr.required.form-control{:autofocus => "autofocus", :name => "user[email]", :placeholder => "Username", :size => "30", :type => "email", :value => ""}/
+      .form-group
+        .input-group
+          .input-group-addon
+            %i.fa.fa-key
+          %input#psw.required.form-control{:name => "user[password]", :placeholder => "Password", :size => "30", :type => "password"}/
+      %a.btn.btn-main.btn-block{:href => home_index_path} SIGN IN
+      .clearfix
+
+      #sharedlinksbin
+        %a{:href => "/users/sign_up"} register
+        %a{:href => "/users/password/new.user"} forgot password?
+        %a{:href => "javascript:void(0);"} learn more
+        %a{:href => "javascript:void(0);"} contact
+      #copyright
+        &copy;
+        = Time.now.year
+        Green Cloud Process, LLC
+
+-#-if !session[:once_in]
+:css
+  #bg-image, #bg-overlay, #logincontainer {display:none;}
+:javascript
+  $(document).ready(function(){
+    loadlogin();
+  });

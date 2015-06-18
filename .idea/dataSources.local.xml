@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - recontrac_prototype_db@localhost" uuid="0b28e513-6dee-43ae-9253-5be6a5997b16">
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <schema-pattern>recontrac_prototype_db.*</schema-pattern>
+      <default-schemas>recontrac_prototype_db.*</default-schemas>
+    </data-source>
+  </component>
+</project>
